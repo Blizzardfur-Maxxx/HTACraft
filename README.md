@@ -7,7 +7,7 @@ fetaures
 
 -game files are downlaoded 
 
--can to uninstall  the jars in Launcher
+-can  uninstall  the jars for the game
 
 -Porxy support for sound fix
 
