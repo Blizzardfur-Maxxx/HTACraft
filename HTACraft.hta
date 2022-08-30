@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+      <style>
+         body {
+            background-image: url("assets/background.png");
+         }
+      </style>
+<HTA:APPLICATION ID="MinecraftLuancher" 
+   BORDER="bold" 
+   BORDERSTYLE="complex"/>
+<TITLE>Minecraft Luancher - HTA CRAFT</TITLE>
+
+</HEAD>
+<script language="javascript">
+function playGame() {
+var objShell = new ActiveXObject("WScript.shell");
+objShell.run("launcherthread.vbs");
+}
+
+function runDownloader() {
+var objShell = new ActiveXObject("WScript.shell");
+var oFSO = new ActiveXObject("Scripting.FileSystemObject")
+oFSO.CreateFolder ("lib");
+oFSO.CreateFolder("lib/native");
+objShell.run("downloadthread.vbs");
+}
+
+function cleanup() {
+var oFSO = new ActiveXObject("Scripting.FileSystemObject")
+oFSO.DeleteFolder ("lib");
+}
+</script>
+
+<BODY>
+
+<H2>Minecraft Luancher - HTA CRAFT</H2>
+<br>
+<H4>A Vbs and Html Aplication Based Minecraft Launcher by : Maxxx#5509 
+<br>
+<H6>Minecraft version Beta 1.7.3 w/ proxy</H6>
+
+		<input type="button" style="height:50px;width:150px" value="Download Files" onclick="runDownloader(this.value)"></input>
+		<input type="button" style="height:50px;width:150px" value="Play Minecraft" onclick="playGame(this.value)"></input>
+		<input type="button" style="height:50px;width:150px" value="Cleanup Jars" onclick="cleanup(this.value)"></input>
+</BODY>
+</HTML>
