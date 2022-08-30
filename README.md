@@ -10,3 +10,7 @@ fetaures
 -can to uninstall  the jars in Launcher
 
 -Porxy support for sound fix
+
+NOTE: due to property lanaagues it only works on windows
+
+if you need help contact Maxxx#5509 on discord other then that just run  HTACraft.hta
