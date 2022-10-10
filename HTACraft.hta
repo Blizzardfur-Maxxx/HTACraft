@@ -22,7 +22,7 @@
 		Else
 	oFSO.CreateFolder ("lib")
 	oFSO.CreateFolder("lib/native")
-	oXMLHTTP.Open "GET", "https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar", False 	'download jars
+	oXMLHTTP.Open "GET", "https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar", False
 	oXMLHTTP.Send
     oStream.Open
     oStream.Type = 1
@@ -93,7 +93,7 @@
     oStream.Write = oXMLHTTP.responseBody
     oStream.SaveToFile "./lib/lwjgl-debug.jar"
     oStream.Close
-	Set oStream = CreateObject("ADODB.Stream") 	'download natives
+	Set oStream = CreateObject("ADODB.Stream")
 	oXMLHTTP.Open "GET", "https://raw.githubusercontent.com/Blizzardfur-Maxxx/Assets-For-Projetcs/main/jinput-dx8.dll", False
 	oXMLHTTP.Send
     oStream.Open
