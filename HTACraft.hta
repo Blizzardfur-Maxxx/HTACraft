@@ -16,15 +16,13 @@
 	Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP.3.0")
 	Set oFSO = CreateObject("Scripting.FileSystemObject")
 	Set objShell = CreateObject("WScript.Shell")
-	'start of subs
-	Sub downloadFilesrunGame()
+	Sub downloadFilesrunGame() 	'start of subs
 	   If (oFSO.FolderExists("lib")) Then
       Call runGame()
 		Else
 	oFSO.CreateFolder ("lib")
 	oFSO.CreateFolder("lib/native")
-	'download jars
-	oXMLHTTP.Open "GET", "https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar", False
+	oXMLHTTP.Open "GET", "https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar", False 	'download jars
 	oXMLHTTP.Send
     oStream.Open
     oStream.Type = 1
@@ -95,8 +93,7 @@
     oStream.Write = oXMLHTTP.responseBody
     oStream.SaveToFile "./lib/lwjgl-debug.jar"
     oStream.Close
-	'download natives
-	Set oStream = CreateObject("ADODB.Stream")
+	Set oStream = CreateObject("ADODB.Stream") 	'download natives
 	oXMLHTTP.Open "GET", "https://raw.githubusercontent.com/Blizzardfur-Maxxx/Assets-For-Projetcs/main/jinput-dx8.dll", False
 	oXMLHTTP.Send
     oStream.Open
