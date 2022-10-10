@@ -16,7 +16,7 @@
 	Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP.3.0")
 	Set oFSO = CreateObject("Scripting.FileSystemObject")
 	Set objShell = CreateObject("WScript.Shell")
-	Sub downloadFilesrunGame() 	'start of subs
+	Sub downloadFilesrunGame()
 	   If (oFSO.FolderExists("lib")) Then
       Call runGame()
 		Else
