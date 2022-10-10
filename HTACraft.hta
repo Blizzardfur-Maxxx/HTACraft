@@ -16,13 +16,14 @@
 	Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP.3.0")
 	Set oFSO = CreateObject("Scripting.FileSystemObject")
 	Set objShell = CreateObject("WScript.Shell")
-	'we use subs now
+	'start of subs
 	Sub downloadFilesrunGame()
 	   If (oFSO.FolderExists("lib")) Then
       Call runGame()
 		Else
 	oFSO.CreateFolder ("lib")
 	oFSO.CreateFolder("lib/native")
+	'download jars
 	oXMLHTTP.Open "GET", "https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar", False
 	oXMLHTTP.Send
     oStream.Open
@@ -162,7 +163,6 @@
 	objShell.Run "java -Djava.library.path=lib\native -Xmx1024M -cp lib\lwjgl.jar;lib\lwjgl_util.jar;lib\jinput.jar;lib\minecraft.jar net.minecraft.client.Minecraft -Dhttp.proxyHost=betacraft.uk"
 	End if
 	End Sub
-	
 	Sub runGame()
 	objShell.Run "java -Djava.library.path=lib\native -Xmx1024M -cp lib\lwjgl.jar;lib\lwjgl_util.jar;lib\jinput.jar;lib\minecraft.jar net.minecraft.client.Minecraft -Dhttp.proxyHost=betacraft.uk"
 	End Sub
@@ -175,12 +175,10 @@
 <H4>A Vbs and Html Aplication Based Minecraft Launcher by : Maxxx#5509 
 <br>
 <H6>Minecraft version Beta 1.7.3 w/ proxy</H6>
-
 		<br>
 		<object width="1000" height="350" data="https://htacraftserver.000webhostapp.com/log.txt">
 		</object>		
 		<br>
 		<input type="button" style="height:100px;width:300px" value="Play Minecraft" onclick="downloadFilesrunGame()"></input>
-
 </BODY>
 </HTML>
